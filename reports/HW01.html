@@ -8,14 +8,23 @@
 <h3>취업 정보 계정 만들기</h3>
 * 필수 입력 항목<br><br>
 <form>
-기본 정보<br><br>
+    기본 정보<br><br>
     이름* <input type="text" maxlength="8"><br>
     이메일* <input type="text" maxlength="15" value="id@domain_name"><br>
     암호* <input type="password" maxlength="12"><br>
     암호 확인* <input type="password" maxlength="12"><br>
     모바일 폰* <input type="text" maxlength="13" value="010-0000-0000"><br>
     개인 홈페이지 <input type="text" maxlength="30" value="http://"><br>
-    주소* <input type="text" maxlength="30"><br>
+    주소* <input type="text" maxlength="30"><br><br>
+    학력<br><br>
+    학교 명* <input type="text" maxlength="12"><br>
+    전공* <input type="text" maxlength="12"><br>
+    졸업 여부* <select name="graduation">
+    <option value="1" selected>---선택---</option>
+    <option value="2">졸업예정</option>
+    <option value="3">졸업</option></select><br>
+    졸업(예정)일 <input type="date" value="연도-월-일"><br><br>
+
 </form>
 </body>
 </html>
