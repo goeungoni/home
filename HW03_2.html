@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>과제03 2번</title>
+    <script>
+        function new_row(prev_row) {
+            if (prev_row === 1) return [[1]];
+            var result = [];
+            for (var row = 1; row <= prev_row; row++) {
+                var arr = [];
+                for (var col = 0; col < row; col++) {
+                    if (col === 0 || col === row - 1) {
+                        arr.push(1);
+                    } else {
+                        arr.push((result[row - 2][col - 1] + result[row - 2][col]));
+                    }
+                }
+                result.push(arr);
+            }
+            return result;
+        }
+    </script>
+</head>
+<body>
+<h3>높이값을 입력받아 파스칼 삼각형 출력하기</h3>
+<script>
+    var height = prompt("파스칼의 삼각형의 높이: ","");
+    for(var i=0; i<new_row(height).length; i++){
+        for(var j=0; j<new_row(height)[i].length; j++){
+            document.write(new_row(height)[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>과제03 1번</title>
+</head>
+<body>
+<h3>2진수를 입력받아 16진수로 출력하기</h3><hr>
+<script>
+    var binary = prompt("2진수를 입력하세요","");
+    var decimal = parseInt(binary, 2);
+    var hex = decimal.toString(16).toUpperCase();
+    document.write("입력받은 값의 16진수는 " + hex + "입니다");
+</script>
+</body>
+</html>
