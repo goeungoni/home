@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 프로그래밍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/bootstrap.bundle.min.js"></script>
+    <script>
+        function transform(){
+            var digit = document.getElementById("digit").value;
+            var decimal = parseInt(digit, 2);
+            var hex = decimal.toString(16).toUpperCase();
+            document.getElementById('hexanum').value = hex;
+        }
+        function pascals() {
+            var pascalTriangle = [];
+            var numRows = document.getElementById("size").value;
+
+            for (var i = 0; i < numRows; i++) {
+                pascalTriangle[i] = new Array(i+1);
+
+                for (var j = 0; j < i+1; j++) {
+                    if (j === 0 || j === i) {
+                        pascalTriangle[i][j] = 1;
+                    } else {
+                        pascalTriangle[i][j] = pascalTriangle[i-1][j-1] + pascalTriangle[i-1][j];
+                    }
+                }
+            }
+            pascal = JSON.stringify(pascalTriangle);
+            document.getElementById("draw_area").innerHTML = pascal;
+        }
+    </script>
+</head>
+<body>
+<div class="container-sm mt-5">
+    <div class="h3">2진수 변환기</div>
+    <div class="mb-3">
+        <label class="form-label text-primary"> 2진수:
+            <input type="text" id="digit" size="20"></label>
+        <button type="button" class="btn btn-dark" onclick="transform()"> ===> </button>
+        <label class="form-label text-primary"> 16진수:
+            <input type="text" id="hexanum" size="20" readonly value=""></label>
+    </div>
+    <hr>
+    <div class="h3">파스칼 삼각형</div>
+    <div class="mb-3">
+        <label class="form-label text-primary"> 삼각형 높이
+            <input type="number" id="size" min="1" max="20" step="1" value="1">
+            <button type="button" class="btn btn-success" onclick="pascals()">그리기</button>
+        </label>
+    </div>
+    <div class="text-bg-secondary" id="draw_area"></div></div>
+</body>
+</html>
