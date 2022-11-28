@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>자바스크립트 프로그래밍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.bundle.min.js"></script>
     <script>
         function transform(){
             var digit = document.getElementById("digit").value;
@@ -28,8 +28,14 @@
                     }
                 }
             }
-            pascal = JSON.stringify(pascalTriangle);
-            document.getElementById("draw_area").innerHTML = pascal;
+            var pascal = '';
+            for (var a=0; a<pascalTriangle.length; a++) {
+                for (var b = 0; b < pascalTriangle[a].length; b++) {
+                    pascal += pascalTriangle[a][b] + ' ';
+                }
+                pascal = pascal + '<br>';
+            }
+            document.getElementById("draw_area").innerHTML += pascal;
         }
     </script>
 </head>
