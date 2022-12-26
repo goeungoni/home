@@ -167,7 +167,7 @@
   /**
    * Clients Slider
    */
-  new Swiper('.school-slider', {
+  new Swiper('.clients-slider', {
     speed: 400,
     loop: true,
     autoplay: {
